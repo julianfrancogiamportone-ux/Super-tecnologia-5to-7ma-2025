@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 public class Factura {
@@ -17,15 +18,15 @@ public class Factura {
 
 	private int id_servicio;
 
-	private Date fecha;
+	private LocalDate fecha;
 
 	private int precio_total;
 	
-	public Usuario () {
+	public Factura () {
     	super();
     }
     
-    public Factura(int id_usuario, int id_componente, int id_servicio, Date fecha, int precio_total) {
+    public Factura(int id_usuario, int id_componente, int id_servicio, LocalDate fecha, int precio_total) {
     	super();
     	this.id_usuario = id_usuario;
     	this.id_componente = id_componente;
@@ -60,10 +61,10 @@ public class Factura {
 		this.id_servicio = id_servicio;
 	}
 	
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 	
