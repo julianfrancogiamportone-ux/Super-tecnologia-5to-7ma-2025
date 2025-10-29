@@ -33,7 +33,7 @@ public class FacturaController {
 	}
 
 	@PostMapping
-	public Factura createUsuario(@RequestBody Factura factura) {
+	public Factura createFactura(@RequestBody Factura factura) {
 		return fService.saveFactura(factura);
 	}
 
