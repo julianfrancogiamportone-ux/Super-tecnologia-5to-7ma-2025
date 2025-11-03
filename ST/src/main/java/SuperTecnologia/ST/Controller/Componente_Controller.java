@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import SuperTecnologia.ST.Entity.Factura;
-import SuperTecnologia.ST.IService.FacturaIService;
+import SuperTecnologia.ST.Entity.Componente;
+import SuperTecnologia.ST.IService.ComponenteIService;
 
 @RestController
-@RequestMapping("/factura")
+@RequestMapping("/Componente")
 @CrossOrigin(origins = "*")
-public class FacturaController {
+public class ComponenteController {
 	@Autowired
-	private FacturaIService fService;
+	private ComponenteIService fService;
 
 	@GetMapping
-	public List<Factura> getAllFacturas() {
-		return fService.findAllFacturas();
+	public List<Componente> getAllComponente() {
+		return fService.findAllComponente();
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Factura> getFacturasById(@PathVariable Long id) {
-		return fService.findFacturaById(id);
+	public Optional<Componente> getComponenteById(@PathVariable Long id) {
+		return fService.findComponenteById(id);
 	}
 
 	@PostMapping
-	public Factura createFactura(@RequestBody Factura factura) {
-		return fService.saveFactura(factura);
+	public Componente createComponente(@RequestBody Componente Componente) {
+		return fService.saveComponente(Componente);
 	}
 
 	@PostMapping("/{id}/delete")
-	public void deleteFactura(@PathVariable Long id) {
-		fService.deleteFactura(id);
+	public void deleteComponente(@PathVariable Long id) {
+		fService.deleteComponente(id);
 	}
 
 	@PostMapping("/delete")
-	public void deleteFactura(@RequestBody Factura factura) {
-		fService.deleteFactura(factura);
+	public void deleteComponente(@RequestBody Componente Componente) {
+		fService.deleteComponente(Componente);
 	}
 
 	@PostMapping("/delete/all")
-	public void deleteAllFacturas() {
-		fService.deleteAllFacturas();
+	public void deleteAllComponente() {
+		fService.deleteAllComponente();
 	}
 }

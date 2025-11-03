@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import SuperTecnologia.ST.Entity.Usuario;
-import SuperTecnologia.ST.IService.UsuarioIService;
+import SuperTecnologia.ST.Entity.Servicio;
+import SuperTecnologia.ST.IService.ServicioIService;
 
 @RestController
 @RequestMapping("/nombreEntidad")
 @CrossOrigin(origins = "*")
-public class UsuarioController {
+public class ServicioController {
 	@Autowired
-	private UsuarioIService pService;
+	private ServicioIService pService;
 	
 	@GetMapping
-	public List<Usuario> getAllUsuarios() {
-		return pService.findAllUsuarios();
+	public List<Servicio> getAllServicio() {
+		return pService.findAllServicio();
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Usuario> getUsuarioById(@PathVariable Long id) {
-		return pService.findUsuarioById(id);
+	public Optional<Servicio> getServicioById(@PathVariable Long id) {
+		return pService.findServicioById(id);
 	}
 	
 	@PostMapping
-	public Usuario createUsuario(@RequestBody Usuario usuario) {
-		return pService.saveUsuario(usuario);
+	public Servicio createServicio(@RequestBody Servicio Servicio) {
+		return pService.saveServicio(Servicio);
 	}
 	
 	@PostMapping("/{id}/delete")
-	public void deleteUsuario(@PathVariable Long id) {
-		pService.deleteUsuario(id);
+	public void deleteServicio(@PathVariable Long id) {
+		pService.deleteServicio(id);
 	}
 	
 	@PostMapping("/delete")
-	public void deleteUsuario(@RequestBody Usuario usuario) {
-		pService.deleteUsuario(usuario);
+	public void deleteServicio(@RequestBody Servicio Servicio) {
+		pService.deleteServicio(Servicio);
 	}
 	
 	@PostMapping("/delete/all")
-	public void deleteAllUsuarios() {
-		pService.deleteAllUsuarios();
+	public void deleteAllServicio() {
+		pService.deleteAllServicio();
 	}
 }
